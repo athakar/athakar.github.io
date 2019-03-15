@@ -1,22 +1,113 @@
-<!doctype html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+  <title>The Iconic Link Creator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,600,300' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
   <script>
     // load Branch
-      (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
-    // init Branch
-    branch.init('key_live_ipLpyi3qBc7dI3iGswQ8ojnmEBdKvJCT');
-    branch.setBranchViewData({
-    data: {
-        
-    }
-});
+    (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
+
+	function createLink() 
+	{
+		// init Branch
+		branch.init('key_live_ipLpyi3qBc7dI3iGswQ8ojnmEBdKvJCT');
+
+		var canonical_url = document.getElementById('canonical_url_field').value;
+		var channel = document.getElementById('channel_field').value;
+		var campaign = document.getElementById('campaign_field').value;
+
+		var iconicLinkData = {
+          channel: channel,
+          campaign: campaign,
+          data: 
+          {
+	          "$canonical_url":canonical_url,
+	          "utm_campaign": campaign,
+	          "utm_term": channel,
+	          "$desktop_url":canonical_url
+          }
+        };
+
+        branch.link(iconicLinkData, function(err, finalLink) {
+          console.log("Creating Branch Link");
+          if (err == null) {
+            document.getElementById('final_url').value = finalLink;
+          }
+          else {
+            console.log(err, finalLink);
+            document.getElementById('final_url').value = err;
+          }
+        });
+	};
+
     </script>
 </head>
 
+<body>
 
+	<div class="container">
+      <div class="panel-header page-header">
+      	<img src="https://branch.io/img/logo-dark.svg" style="width:100px;">
+      	<br/>
+      	<br/>
+      	<br/>
+        <strong>THE ICONIC Link Creator<strong/>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+            </div>
+            <div id="basic_fields" class="collapse show">
+              <div class="panel-body">
+                  <label>Web URL (Required):
+                  	<br/>
+                    <input type="text" id="canonical_url_field" class="form-control" value=""/>
+                  </label>
+                  <br/>
+                  <br/>
+                  <label> Channel:
+                    <p>Where will you post this link?</p>
+                    <input type="text" id="channel_field" class="form-control" value=""/>
+                  </label>
+                  <br/>
+                  <br/>
+                  <label> Campaign:
+                  	<p>What is the title of the campaign?<p/>
+                    <input type="text" id="campaign_field" class="form-control" value=""/>
+                  </label>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-info" onclick="createLink()">Create Link</button>
+
+          <div>
+          	<br/>
+          <div/>
+
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <input type="text" id="final_url" class="form-control" value="Link Generated Here" readonly />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+</body>
 
   
 </html>
