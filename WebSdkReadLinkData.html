@@ -11,7 +11,14 @@
     
     branch.init('key_live_ipLpyi3qBc7dI3iGswQ8ojnmEBdKvJCT',function(err, data) 
      {
-        document.getElementById('result').value = JSON.stringify(data);
+      if (err == null) {
+            document.getElementById('result').value = JSON.stringify(data);
+          }
+          else {
+            console.log(err, finalLink);
+            document.getElementById('final_url').value = err;
+          }
+        
      });
     
     
@@ -19,7 +26,7 @@
   </script>
 </head>
 <body>
-    <input id="result" name="txtOne" type="text" value="" />
+    <input id="result" name="result" type="text" value="" />
 </body>
   
 </html>
