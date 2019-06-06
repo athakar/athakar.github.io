@@ -10,7 +10,7 @@
     branch.init('key_live_ipLpyi3qBc7dI3iGswQ8ojnmEBdKvJCT',function(err, data) 
      {
       if (err == null) {
-            console.log(err, finalLink);
+            console.log(err, data);
             document.getElementById('result').value = JSON.stringify(data);
           }
           else {
@@ -25,7 +25,7 @@
   </script>
 </head>
 <body>
-    <input id="result" type="text" value="" size="35"/>
+    <input id="result" type="text" value=""/>
 </body>
   
 </html>
