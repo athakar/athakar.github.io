@@ -10,10 +10,11 @@
     branch.init('key_live_ipLpyi3qBc7dI3iGswQ8ojnmEBdKvJCT',function(err, data) 
      {
       if (err == null) {
+            console.log(err, finalLink);
             document.getElementById('result').value = JSON.stringify(data);
           }
           else {
-            console.log(err, finalLink);
+            console.log(err, data);
             document.getElementById('result').value = err;
           }
         
