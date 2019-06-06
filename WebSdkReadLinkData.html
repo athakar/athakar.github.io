@@ -11,13 +11,15 @@
     
     branch.init('key_live_ipLpyi3qBc7dI3iGswQ8ojnmEBdKvJCT',function(err, data) 
      {
-        console.log(JSON.stringify(data));
+        document.getElementById('result').value = data;
      });
+    
+    
     
   </script>
 </head>
 <body>
-  Read link data
+    <input id="result" name="txtOne" type="text" value="" />
 </body>
   
 </html>
