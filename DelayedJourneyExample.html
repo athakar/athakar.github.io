@@ -11,7 +11,7 @@
       {
           'no_journeys': true
       });
-      document.getElementById("demo").onclick = function() {myFunction()}; 
+//       document.getElementById("demo").onclick = function() {myFunction()}; 
       function myFunction() 
       {
          branch.track('pageview');
@@ -34,7 +34,7 @@
     
   <body>
       <h1>Click for Journey</h1>
-      <button id="demo" class="button">Click Here</button>
+      <button id="demo" class="button" onclick=“myFunction()” >Click Here</button>
    
 <!--       <script> 
        document.getElementById("demo").onclick = function() {myFunction()}; 
