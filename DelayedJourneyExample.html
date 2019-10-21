@@ -33,7 +33,9 @@
        document.getElementById("demo").onclick = function() {myFunction()}; 
        function myFunction() 
        {
-         branch.track('pageview');
+         var listener = function(event, data) { console.log(event, data); }
+         // Specify an event to listen for
+         branch.addListener('willShowJourney', listener);
        }
       </script>
   </body> 
