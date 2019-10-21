@@ -26,8 +26,15 @@
  </head>
     
   <body>
-   <script> branch.closeJourney(function(err) { console.log(err); }); </script>
       <h1>Click for Journey</h1>
-      <button class="button">Click Here</button>
-  </body>
+      <button id="demo" class="button">Click Here</button>
+   
+      <script> 
+       document.getElementById("demo").onclick = function() {myFunction()}; 
+       function myFunction() 
+       {
+         branch.track('pageview');
+       }
+      </script>
+  </body> 
 </html>
