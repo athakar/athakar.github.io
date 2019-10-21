@@ -9,9 +9,13 @@
      // Read deep link data from Branch link
       branch.init('key_live_ipLpyi3qBc7dI3iGswQ8ojnmEBdKvJCT',
       {
-          ‘disable_entry_animation’ : true,
-          ‘disable_exit_animation’ : true
+          'no_journeys': true
       });
+      document.getElementById("demo").onclick = function() {myFunction()}; 
+      function myFunction() 
+      {
+         branch.track('pageview');
+      }
     </script>
   
     <style>
@@ -32,12 +36,12 @@
       <h1>Click for Journey</h1>
       <button id="demo" class="button">Click Here</button>
    
-      <script> 
+<!--       <script> 
        document.getElementById("demo").onclick = function() {myFunction()}; 
        function myFunction() 
        {
          branch.track('pageview');
        }
-      </script>
+      </script> -->
   </body> 
 </html>
