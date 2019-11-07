@@ -14,21 +14,23 @@
                 'make_new_link' : false
              }
       );
-    
-    var thelinkdata = {
-          channel: 'make_new_link_channel',
-          campaign: 'make_new_link_campaign'
-    };
+   function createLink()
+   {
+          var thelinkdata = {
+                channel: 'make_new_link_channel',
+                campaign: 'make_new_link_campaign'
+          };
 
-    branch.link(thelinkdata, function(err, finalLink) {
-    console.log("Creating Branch Link");
-    if (err == null) {
-           document.getElementById('final_url').value = finalLink;
-     }
-     else {
-           console.log(err, finalLink);
-       }
-    });
+          branch.link(thelinkdata, function(err, finalLink) {
+          console.log("Creating Branch Link");
+          if (err == null) {
+                 document.getElementById('final_url').value = finalLink;
+           }
+           else {
+                 console.log(err, finalLink);
+             }
+          });
+   };
  </script>
   
   
@@ -44,7 +46,7 @@
 
           <div class="panel panel-default">
             <div class="panel-body">
-              <input type="text" id="final_url" class="form-control" value="Link Generated Here" readonly />
+              <input type="text" id="final_url" class="form-control" style="width:100px;" value="Link Generated Here" readonly />
             </div>
           </div>
 </body>
