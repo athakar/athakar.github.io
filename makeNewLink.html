@@ -25,6 +25,7 @@
           console.log("Creating Branch Link");
           if (err == null) {
                  document.getElementById('final_url').value = finalLink;
+                 document.getElementById('final_url').href = finalLink;
            }
            else {
                  console.log(err, finalLink);
@@ -46,7 +47,7 @@
 
           <div class="panel panel-default">
             <div class="panel-body">
-              <a id="final_url" class="form-control" value="Link Generated Here"/>
+              <a id="final_url" class="form-control"/>
             </div>
           </div>
 </body>
