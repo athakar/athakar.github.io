@@ -13,14 +13,40 @@
              {
                 'make_new_link' : false
              }
-    );
+      );
     
-  </script>
+    var thelinkdata = {
+          channel: 'make_new_link_channel',
+          campaign: 'make_new_link_campaign'
+    };
+
+    branch.link(thelinkdata, function(err, finalLink) {
+    console.log("Creating Branch Link");
+    if (err == null) {
+           document.getElementById('final_url').value = finalLink;
+     }
+     else {
+           console.log(err, finalLink);
+       }
+    });
+ </script>
+  
+  
 </head>
 <body>
   hello world
   <br></br>
-  <a href="https://athakar.app.link/makeNewLink_WebLink">https://athakar.app.link/makeNewLink_WebLink</a>
+  <button class="btn btn-info" onclick="createLink()">Create Link</button>
+
+          <div>
+          	<br/>
+          <div/>
+
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <input type="text" id="final_url" class="form-control" value="Link Generated Here" readonly />
+            </div>
+          </div>
 </body>
   
 </html>
