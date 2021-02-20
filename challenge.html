@@ -3,7 +3,6 @@
 <head>
 <style>
 .button {
-  border: none;
   color: white;
   text-align: center;
   display: inline-block;
@@ -17,20 +16,17 @@
   
  <script>
    
-   fetch("https://ipinfo.io/json")
-  .then(function (response) {
+  fetch("https://ipinfo.io/json").then(function (response)
+  {
     return response.json();
-  })
-  .then(function (myJson) {
+  }).then(function (myJson)
+  {
     console.log(myJson.ip);
-  })
-  .catch(function (error) {
-    console.log("Error: " + error);
   });
 
  </script>
 
-<button class="button button_1">Send Get</button>
+<button class="button button_1">WHAT IS MY PUBLIC IP?</button>
 
 </body>
 </html>
