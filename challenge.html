@@ -16,12 +16,13 @@
   
  <script>
    
-  fetch("https://ipinfo.io/json").then(function (response)
+  fetch("https://ipinfo.io/json").then(function (message)
   {
-    return response.json();
-  }).then(function (myJson)
+    return message.json();
+  }).then(function (payload)
   {
-    console.log(myJson.ip);
+    console.log(payload.ip);
+    console.log(payload.city);
   });
 
  </script>
