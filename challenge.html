@@ -6,7 +6,7 @@
   color: black;
   text-align: center;
   display: inline-block;
-  font-size: 32px;
+  font-size: 26px;
 }
 
 .button_1 {background-color: #FFA500;}
@@ -14,20 +14,25 @@
 </head>
 <body>
   
+  <h1 id=details></h1>
+  
  <script>
-   
-  fetch("https://ipinfo.io/json").then(function (message)
-  {
-    return message.json();
-  }).then(function (payload)
-  {
-    console.log(payload.ip);
-    console.log(payload.city);
-  });
+   function myFunction() 
+   {
+          fetch("https://ipinfo.io/json").then(function (message)
+          {
+            return message.json();
+          }).then(function (payload)
+          {
+            console.log(payload.city);
+            console.log(payload.postal);
+            document.querySelector("#details").innerHTML = payload.city;
+          });
+   }
 
  </script>
 
-<button class="button button_1">WHAT IS MY PUBLIC IP?</button>
+<button class="button button_1" onclick="myFunction()" >Where do I live?</button>
 
 </body>
 </html>
