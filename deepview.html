@@ -1,0 +1,502 @@
+<!DOCTYPE html><html><head>
+<meta name="deepview-service" content="deepview-service">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:700,300" rel="stylesheet" type="text/css">
+<style>
+* {
+ font-family: "arial",serif, Helvetica, serif;
+}
+body {
+margin: 0;
+word-wrap: break-word;
+}
+/* ============ Portrait ============ */
+.main-image {
+width: 100%;
+height: 250px;
+height: 75vw;
+{{#if link_data.$og_image_url}}
+background-image: url({{link_data.$og_image_url}});
+{{else}}
+{{#if app.og_image_url}}
+background-image: url({{app.og_image_url}});
+{{/if}}
+{{/if}}
+background-size: cover;
+background-position:top center;
+}
+#content-container {
+box-sizing:border-box;
+padding: 24px;
+margin:0px 24px 0 24px;
+background-color: white;
+height : auto;
+position : fixed;
+ bottom : 120px;
+  left : 0;
+}
+.app-title {
+font-size: 14px;
+padding-bottom: 11px;
+text-transform: uppercase;
+}
+.card-title {
+font-size: 33px;
+line-height: 36px;
+margin-top : 20px;
+}
+
+.app-content {
+font-size: 22px;
+border : 2px solid rgb(2, 122, 174);
+padding : 10px;
+border-radius : 10px;
+background-color : #DCEDF7;
+margin-top : 10px;
+height : auto;
+  font-size : 1.4rem;
+}
+.app-content a {
+  color : black;
+ }
+.input-wrapper {
+position: fixed;
+bottom: 0;
+left: 0;
+width:100%;
+height : 110px;
+background-color: white;
+-webkit-box-shadow: 0px -20px 20px -8px rgba(255,255,255,1);
+-moz-box-shadow: 0px -20px 20px -8px rgba(255,255,255,1);
+box-shadow: 0px -20px 20px -8px rgba(255,255,255,1);
+}
+.input-container {
+width:100%;
+padding:0 24px;
+text-align:center;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+.form-get-the-app {
+text-align:center;
+padding-top: 10px;
+border-top: 2px solid #CECECE;
+}
+.form-get-the-app > input {
+margin-right: 10px;
+padding-top: 10px;
+padding-bottom: 10px;
+background-color: #FFFFFF;
+border: 1px solid #979797;
+border-radius: 2px;
+font-size: 60px;
+color: #CECECE;
+line-height: 24px;
+padding-left: 20px;
+}
+.input-label {
+padding-bottom: 4px;
+font-size: 13px;
+padding-left: 10px;
+padding-right: 10px;
+overflow: hidden;
+word-wrap: break-word;
+padding-top: 4px;
+text-align: center;
+}
+.app-icon {
+content:" ";
+float:left;
+display:inline-block;
+width:62px;
+height: 62px;
+line-height: 62px;
+background-size:100% auto;
+{{#if app.og_image_url}}
+background-image: url({{app.og_image_url}});
+{{/if}}
+}
+.cta-button {
+display:block;
+height: 62px;
+line-height:62px;
+background-color: rgb(2, 122, 174);
+border-radius: 2px;
+font-size: 20px;
+padding:0px;
+width : 100%;
+margin-left:0%;
+color: #FFFFFF;
+text-align: center;
+text-decoration: none;
+text-align : center;
+}
+/* No data (portrait) */
+@media only screen and (orientation: portrait) {
+.card--no-data .main-image {
+background-image: url("http://s3-us-west-1.amazonaws.com/branch-assets/b_stripes-small.png");
+background-size: auto;
+background-position: top center;
+background-repeat: repeat;
+height: 190px;
+}
+.card--no-data > .app-icon {
+position: absolute;
+top: 160px;
+left: 34px;
+}
+.card--no-data #content-container {
+margin-top:20px;
+}
+}
+@media screen /* >= iPhone 5 */
+and (min-device-width: 321px) {
+.input-label {
+font-size: 14px;
+}
+  .app-content
+  {
+    font-size : 18px;
+  }
+}
+@media only screen /* >= iPhone 6 */
+and (min-device-width: 375px)
+and (orientation: portrait) {
+.main-image {
+height:300px;
+height: 80vw;
+}
+.app-content {
+padding-bottom:10px;
+  font-size : 18px;
+}
+.input-wrapper {
+height:115px;
+}
+}
+@media only screen /* >= iPhone 6+ */
+and (min-device-width: 414px)
+and (orientation: portrait) {
+.main-image {
+height:390px;
+height: 95vw;
+}
+}
+/* ============ Landscape ============ */
+@media only screen and (orientation: landscape){
+.main-image {
+position:fixed;
+height:100%;
+height:100vh;
+width: 50%;
+}
+.input-wrapper {
+right:0;
+left:auto;
+width:50%;
+}
+#content-container {
+float:left;
+width:50%;
+right : 0;
+left:auto;
+}
+.input-wrapper {
+height:108px;
+}
+.app-content {
+padding-bottom:10px;
+
+}
+.form-get-the-app {
+padding-top:8px;
+}
+.input-container {
+left: 50%;
+}
+.cta-button {
+height: 44px;
+line-height: 44px;
+padding:0 5px;
+margin-left:50px;
+  margin-right : 50px;
+}
+.app-icon {
+width: 44px;
+height: 44px;
+}
+/* No data (landscape) */
+.card--no-data .main-image {
+height: 100%;
+}
+.card--no-data > .app-icon {
+display:none;
+}
+.card--no-data #content-container {
+margin-top:0;
+}
+}
+@media only screen /* >= iPhone 6 */
+and (min-device-width: 645px)
+and (orientation: landscape) {
+.form-get-the-app {
+padding-top:8px;
+}
+.cta-button {
+height: 62px;
+line-height: 62px;
+padding:0 20px;
+margin-left:70px;
+  margin-right : 70px;
+}
+.app-icon {
+width: 62px;
+height: 62px;
+top:-2px;
+}
+}
+/* Reusables */
+.text-bold {
+font-weight: 700
+}
+.text-light {
+font-weight: 300;
+}
+.cta-button--no-app-icon {
+margin-left:0;
+}
+
+.upper
+  {
+    background-image: linear-gradient(to right,#00A2DF, #0069A4);
+    min-height : 25vh;
+    display : flex;
+    justify-content: center;
+  }
+  .upper img
+  {
+    width: 200px;
+    object-fit:contain;
+  }
+ .floatingview
+  {
+    position: absolute;
+    top: 15vh;
+    background-color: transparent;
+    margin: 10px 0px;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+  	align-items:center;
+  }
+  .floatingview .innerfloatview
+  {
+    border-radius: 15px;
+    box-shadow: 0px 4px 16px rgba(33, 33, 33, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    margin-top: 20px;
+    width: 80%;
+  }
+  .floatingview .innerfloatview h3
+  {
+    font-weight: bolder;
+	font-size: 20px;
+	line-height: 28px;
+	text-align: center;
+    font-family: arial;
+  }
+  .floatingview .innerfloatview h4
+  {
+    font-size: 18px;
+	line-height: 24px;
+    text-align: center;
+	color: #212121;
+    font-weight: 500;
+  }
+  .floatingview .innerfloatview button
+  {
+    padding: 16px;
+    border: none;
+    background-color: #027AAE;
+    color: white;
+    font-size: 1rem;
+    border-radius: 12px;
+    font-weight: bolder;
+    margin: auto;
+  }
+  .innerfloatview img
+  {
+    width: 200px;
+    object-fit: contain;
+  }
+  .innerfloatview .lines
+  {
+    padding: 0px 10px;
+  }
+  .innerfloatview .lines .line
+  {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .innerfloatview .lines .line h4
+  {
+    color: #027AAE;
+    border: 2px solid #027AAE;
+    padding: 6px 12px;
+    border-radius:30px;
+    margin-right: 10px;
+    font-size: 1.4rem;
+  }
+  .innerfloatview .lines .line span
+  {
+    font-size: 18px;
+	line-height: 24px;
+	color: #363636;
+  }
+  .floatingview .lower
+  {
+    padding : 20px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90vw;
+  }
+  .floatingview .lower .line
+  {
+    flex:0.45;
+    height: 2px;
+    background-color: #ADADAD;
+    margin: 0px 10px;
+  }
+  .floatingview .lower h4
+  {
+    padding: 5px;
+    font-weight: bolder;
+	font-size: 16px;
+	line-height: 19px;
+	color: #000000;
+    flex:0.15;
+    text-align: center;
+  }
+  .floatingview button
+  {
+    padding: 16px;
+    border: 1px solid #027AAE;
+    background-color: white;
+    color: #027AAE;
+    font-size: 1rem;
+    border-radius: 12px;
+    font-weight: bolder;
+ 	width: 80vw;
+  }
+  .privacy
+  {
+    background-color: #737373;
+    padding: 20px;
+    margin-top : 50px;
+  }
+  .privacy h4
+  {
+    font-size: 18px;
+    line-height: 24px;
+    color: white;
+  }
+  .privacy span
+  {
+    line-height: 24px;
+    color: white;
+    font-size: 1rem;
+  }
+  #plusbutton
+  {
+    font-weight: bolder;
+    color: #027AAE;
+    border: 2px solid #027AAE;
+    border-radius: 20px;
+    padding: 4px 10px;
+  }
+    #hpapp {
+    padding: 16px;
+    border: none;
+    background-color: #027AAE;
+    color: white;
+    font-size: 1rem;
+    border-radius: 12px;
+    font-weight: bolder;
+    margin: auto;
+    width: 70vw;
+    text-align: center;
+    text-decoration: none;
+  }
+    #continuebtn {
+    padding: 16px;
+    border: 1px solid #027AAE;
+    background-color: white;
+    color: #027AAE;
+    font-size: 1rem;
+    border-radius: 12px;
+    font-weight: bolder;
+    width: 80vw;
+    text-decoration: none;
+      text-align: center;
+    }
+</style>
+</head>
+<body>
+  <div class="upper">
+    <img src="https://www.hpsmart.com/assets/deep/logo.png">
+  </div>
+  <div class="floatingview">
+    <div class="innerfloatview">
+    <h3>Learn more about hassle-free printing and sign up today</h3>
+    <h4>Click <b>Get HP Smart App</b> to learn more and enroll in HP Instant Ink.</h4>
+        <a id="hpapp" href= {{action}}>Get HP Smart App</a>
+     <h4>Don’t have HP Smart app on this device?</h4>
+    <div class="lines">
+      <div class="line">
+        <h4>1</h4>
+        <span>Click <b>Get HP Smart app</b> above to open the app store and install HP Smart app</span>
+      </div>
+       <div class="line">
+        <h4>2</h4>
+        <span><b>Sign In</b> to your existing HP account when prompted</span>
+      </div>
+      <div class="line">
+        <h4>3</h4>
+        <span>If your printer doesn’t automatically appear, select “<b>Add Printer</b>” or the <span id="plusbutton">+</span> to add your printer</span>
+      </div>
+      <div class="line">
+        <h4>4</h4>
+        <span>On the home screen select the <b>Instant Ink</b> tile and follow the instructions to learn more and sign up</span>
+      </div>
+    </div>
+    <img src="https://www.hpsmart.com/assets/deep/phone.png">
+  </div>
+  	<div class="lower">
+      <div class="line"></div>
+      <h4>OR</h4>
+      <div class="line"></div>
+    </div>
+       <a id="continuebtn"href="https://instantink.hpconnected.com/us/en/l/v2?jumpid=mb_0cb0e389f0">Continue on HPInstantInk.com</a>    	<div class="privacy">
+          <h4>Your Privacy</h4>
+          <span>We use cookies (or similar technologies) to personalize content and ads, to provide social media features and to analyse our traffic. By clicking "Accept ", you agree to this and the sharing of information (What data we collect) about your use of our site with our affiliates &amp; partners. You can manage your preferences in Cookie Settings, withdraw your consent at any time or find out more about Use of cookies.
+          </span>
+   	 	</div>
+      </div>
+
+<script>
+  //const query_string = window.location.search;
+//const url_params = new URLSearchParams(query_string);
+//const original_url = url_params.get('$original_url');
+
+//const link_to_update = document.getElementById('continuebtn');
+//link_to_update.setAttribute('href', original_url);
+</script>
+  	 
+</body></html>
