@@ -503,7 +503,7 @@ function validateProtocol(url) {
 					var hasRedirected = false;
 					var handler = function() {
 						if (!document.hidden && !hasRedirected) {
-							window.top.location = validateProtocol("https://www.microsoft.com/store/apps/9wzdncrfhwlh");
+							window.top.location = validateProtocol("ms-windows-store://pdp/?PFN=AD2F1837.HPPrinterControl_v10z8vjag6ke6&_branch_match_id=721763752916217064&utm_medium=marketing&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXzygozk0sKtFLLCjQy8nMy9YvLTEKcnJPca%2FKSrKPj08qSsxLzohPSS3OLskvANKpBWWZqeXxJZUFqbaGanAFaTn55fGZKbaGBqYmFuampkZGJiaGBhYW5mbGAPr%2FyjFqAAAA");
 							hasRedirected = true;
 						}
 					};
