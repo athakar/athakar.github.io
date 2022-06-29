@@ -500,14 +500,6 @@ function validateProtocol(url) {
    return null;
 }
 
-					// window.onload = function() {
-					// 	window.top.location = validateProtocol("branchsters://open?link_click_id=669686310143519184");
-					// 	setTimeout(function timeout() {
-					// 		if (document.webkitHidden || document.hidden) { return; }
-					// 		window.top.location = validateProtocol("itms-appss://itunes.apple.com/app/id1058959277?mat_deeplink=ubereats%3A%2F%2Fstore%2Fbrowse%3FstoreUUID&referrer=mat_click_id%3D4059968beb364beba849690615e86fe3-20190523-7336%26link_click_id%3D660240599525641322&mat_click_id=4059968beb364beba849690615e86fe3-20190523-7336");
-					// 	}, 250);
-					// };
-
 					var hasRedirected = false;
 					var handler = function() {
 						if (!document.hidden && !hasRedirected) {
