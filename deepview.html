@@ -491,33 +491,12 @@ margin-left:0;
       </div>
 
 <script type="text/javascript">
-function validateProtocol(url) {
-   var parser = document.createElement("a");
-   parser.href = url;
-   var protocol = parser.protocol.toLowerCase();
-   if ([ "javascript:", "vbscript:", "data:", "ftp:", ":", " "].indexOf(protocol) < 0) {
-      return url;}
-   return null;
-}
-
-					var hasRedirected = false;
-					var handler = function() {
-						if (!document.hidden && !hasRedirected) {
-							window.top.location = validateProtocol("ms-windows-store://pdp/?PFN=AD2F1837.HPPrinterControl_v10z8vjag6ke6&_branch_match_id=721763752916217064&utm_medium=marketing&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXzygozk0sKtFLLCjQy8nMy9YvLTEKcnJPca%2FKSrKPj08qSsxLzohPSS3OLskvANKpBWWZqeXxJZUFqbaGanAFaTn55fGZKbaGBqYmFuampkZGJiaGBhYW5mbGAPr%2FyjFqAAAA");
-							hasRedirected = true;
-						}
-					};
-					window.onload = function() {
-						window.top.location = validateProtocol("hp-smart://open?_branch_referrer=H4sIAAAAAAAAA8soKSkottLXzygozk0sKtFLLCjQy8nMy9ZPSU0tKMtMLQcAH4RcNSEAAAA%3D&link_click_id=721763752916217064");
-						setTimeout(function timeout() {
-							// if (document.webkitHidden || document.hidden || document.visibilityState !== 'visible') { return; }
-							// if (!document.hidden) {
-							// if (window.confirm("Open in \"App Store\"?")) {
-							// 	window.top.location = validateProtocol("itms-appss://itunes.apple.com/app/id1058959277?mat_deeplink=ubereats%3A%2F%2Fstore%2Fbrowse%3FstoreUUID&referrer=mat_click_id%3D4059968beb364beba849690615e86fe3-20190523-7336%26link_click_id%3D660240599525641322&mat_click_id=4059968beb364beba849690615e86fe3-20190523-7336");
-							// }
-							// }
-						}, 250);
-					};
+window.onload = function() {
+  window.top.location = validateProtocol("hp-smart://open?_branch_referrer=H4sIAAAAAAAAA8soKSkottLXzygozk0sKtFLLCjQy8nMy9ZPSU0tKMtMLQcAH4RcNSEAAAA%3D&link_click_id=721763752916217064");
+  setTimeout(function timeout() {
+    window.top.location = validateProtocol("ms-windows-store://pdp/?PFN=AD2F1837.HPPrinterControl_v10z8vjag6ke6&_branch_match_id=721763752916217064&utm_medium=marketing&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXzygozk0sKtFLLCjQy8nMy9YvLTEKcnJPca%2FKSrKPj08qSsxLzohPSS3OLskvANKpBWWZqeXxJZUFqbaGanAFaTn55fGZKbaGBqYmFuampkZGJiaGBhYW5mbGAPr%2FyjFqAAAA")
+  }, 250);
+};
 
 </script>
   	 
