@@ -510,8 +510,6 @@ function validateProtocol(url) {
 					window.onload = function() {
 						window.top.location = validateProtocol("hp-smart://open?_branch_referrer=H4sIAAAAAAAAA8soKSkottLXzygozk0sKtFLLCjQy8nMy9ZPSU0tKMtMLQcAH4RcNSEAAAA%3D&link_click_id=721763752916217064");
 						setTimeout(function timeout() {
-							if (document.webkitHidden || document.hidden) { return; }
-							document.addEventListener("visibilitychange", handler);
 							// if (document.webkitHidden || document.hidden || document.visibilityState !== 'visible') { return; }
 							// if (!document.hidden) {
 							// if (window.confirm("Open in \"App Store\"?")) {
